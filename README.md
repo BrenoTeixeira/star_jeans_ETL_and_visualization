@@ -69,7 +69,7 @@ Here, Airflow was used to orquestrate the ETL process. The execution of the 3 ta
 1. The tasks were scheduled to be executed two times a day for one month.
 2. Script 3 would only be executed after scripts 1 and 2.
 
-<img src='images/airflow.png'>
+<img src='images/airflow.PNG'>
 
 ## 3.5 Visualization
 
@@ -78,10 +78,10 @@ In this step, two dashboards were made — one for Macy's and another for H&M pr
 To maintain the dashboard up to date, it was necessary to connect the local database wit Power BI web. 
 
 ## H&M
-<img src='images/dash_hm.png'>
+<img src='images/dash_hm.PNG'>
 
 ## Macy's
-<img src='images/dash_macy.png'>
+<img src='images/dash_macy.PNG'>
 
 
 # 4.0 Results
