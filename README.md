@@ -96,4 +96,3 @@ This solution will allow the partners to monitor the prices of their main compet
 
 - Use a database in cloud, and.
 - Run airflow 24/7 in a cloud service.
-- 
