@@ -16,13 +16,15 @@ It is known that their main competitors are the American companies H&M and Macy'
 
 # 2.0. Solution Planning
 
-For this project, we will collect data from the website of the main competitors. We can extract information like prices, types, colors, compositions, and sizes of the products.
+Collect data from the website of the main competitors. Extract information like prices, types, colors, compositions, and sizes of the products.
 
-We will extract the data from the websites and save it in a Postgres Database using two web-scraping python scripts. Then a visualization tool will be used to answer the business questions.
+Build a python script to collect, clean and save the data in a Postgres Database. Then use a visualization tool (Power BI) to answer the business questions.
+
+Use airflow to automate and orchestrate the whole process.
 
 **Final Product**
 
-The final product will be two dashboards, one for each competitor. In these dashboards, the user can select a product and a period, and it will contain information like average price, daily price, color, and prime materials.
+The final product will be two dashboards, one for each competitor. In these dashboards, the user will be able tog select a product and a period, and it will contain information like average price, daily price, color, and prime materials.
 
 # 2.1. Tools
 
@@ -43,14 +45,14 @@ The final product will be two dashboards, one for each competitor. In these dash
 
 ## 3.1 Data Extraction 
 
-A python library called BeautifulSoup was used to scrape the data from H&M and Macy's websites.
+A python script was library called BeautifulSoup was used to scrape the data from H&M and Macy's websites.
 
 
 ## 3.2 Data Transformation
 
-After collecting the data, some data cleaning techniques were necessary to make the data usable for data analysis and visualization.
+After collecting the data, some data cleaning techniques were necessary to make the data ready the for data analysis and visualization.
 
-Using Python and pandas, a python library, some transformations like removing special characters and standardizing the content of the columns were made.
+Using Python, pandas and regular expressions, some transformations like removing special characters and standardizing the content of the columns were made.
 
 ## 3.3 Loading
 
@@ -64,7 +66,7 @@ From the previous section we ended up with 3 python scripts:
 - script 2: Collect and clean the data from H&M website.
 - script 3: Insert the processed data from the websites in a Postgre Database.
 
-Here, Airflow was used to orquestrate the ETL process. The execution of the 3 tasks were defined as follows:
+Here, Airflow was used to orchestrate the ETL process. The execution of the tasks was defined as follows:
 
 1. The tasks were scheduled to be executed two times a day for one month.
 2. Script 3 would only be executed after scripts 1 and 2.
@@ -75,7 +77,7 @@ Here, Airflow was used to orquestrate the ETL process. The execution of the 3 ta
 
 In this step, two dashboards were made — one for Macy's and another for H&M products — using Power BI desktop and then published in Power BI web. 
 
-To maintain the dashboard up to date, it was necessary to connect the local database wit Power BI web. 
+To maintain the dashboard up to date, it was necessary to connect the local database with Power BI web and schedule a daily update of the data. 
 
 ## H&M
 <img src='images/dash_hm.PNG'>
@@ -92,4 +94,6 @@ This solution will allow the partners to monitor the prices of their main compet
 
 # 5.0 Next Steps
 
-- Use a database in cloud, and run airflow in a cloud service.
+- Use a database in cloud, and.
+- Run airflow 24/7 in a cloud service.
+- 
